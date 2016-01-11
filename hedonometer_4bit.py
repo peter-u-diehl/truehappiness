@@ -11,7 +11,6 @@ from gensim.models import Word2Vec
 weight_path = './single_layer_hedonometer/' #  'random/' #  
 img_dict = {}
 img_dict['start'] = imread(weight_path + 'sleep.png')
-img_dict['poo'] = imread(weight_path + 'poo.png')
 for number in xrange(1,9):
     img_dict[number] = imread(weight_path + str(number)+'.png')
 fig = figure(frameon=False)
@@ -249,11 +248,7 @@ while True:
         #     print current_spike_count,  np.asarray(spike_counters['Ce'].count[:]), previous_spike_count
         previous_spike_count = np.copy(spike_counters[num_layers-1].count[:])
         print "Number of output spikes:", current_spike_count, '\n'
-        
-        if word=='shit' or word=='poo':
-            imshow(img_dict['poo'])
-        else:
-            imshow(img_dict[(int(round(layer1_output)))])
+        imshow(img_dict[(int(round(layer1_output)))])
         draw()
             
         #     b.figure()
