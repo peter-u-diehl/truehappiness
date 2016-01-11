@@ -1,0 +1,12 @@
+import numpy as np
+
+from gensim import Word2Vec
+
+
+layer0 = np.loadtxt('0.txt')
+layer1 = np.loadtxt('1.txt')
+
+print 'layer0', layer0, layer0.shape
+print 'layer1', layer1
+
+model = Word2Vec.load_word2vec_format('word2vec.ascii', binary=False)
